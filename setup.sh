@@ -11,11 +11,10 @@ done
 chsh -s /bin/zsh
 
 ### Set up vim
-
 git clone --recursive http://github.com/rameshvs/dotvim $HOME/.vim
-ln -s $HOME/.vim/vimrc .vimrc
+ln -s $HOME/.vim/vimrc $HOME/.vimrc
 touch $HOME/.vim/viminfo
 ln -s $HOME/.vim/viminfo $HOME/.viminfo
 
 ### set up other stuff
-cp tmux.conf ~/.tmux.conf
+cp tmux.conf $HOME/.tmux.conf
