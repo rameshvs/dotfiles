@@ -10,6 +10,12 @@ done
 
 chsh -s /bin/zsh
 
+### Make a local folder and populate with useful scripts
+mkdir -p $HOME/.local/bin
+curl -o $HOME/.local/bin/imgls https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgls
+curl -o $HOME/.local/bin/imgcat https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat
+chmod u+x $HOME/.local/bin/img{cat,ls}
+
 ### Set up vim
 git clone --recursive http://github.com/rameshvs/dotvim $HOME/.vim
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
