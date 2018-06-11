@@ -17,10 +17,17 @@ curl -o $HOME/.local/bin/imgcat https://raw.githubusercontent.com/gnachman/iTerm
 chmod u+x $HOME/.local/bin/img{cat,ls}
 
 ### Set up vim
-git clone --recursive http://github.com/rameshvs/dotvim $HOME/.vim
+git clone --recursive https://github.com/rameshvs/dotvim $HOME/.vim
 ln -s $HOME/.vim/vimrc $HOME/.vimrc
 touch $HOME/.vim/viminfo
 ln -s $HOME/.vim/viminfo $HOME/.viminfo
+
+### Set up neovim, but only if it's installed
+if command -v nvim >/dev/null 2>&1; then
+    mkdir -p $HOME/.config/nvim
+    git clone https://github.com/rameshvs/dotnvim $HOME/.config/nvim
+    nvim +PlugInstall +qa
+fi
 
 ### set up other stuff
 cp tmux.conf $HOME/.tmux.conf
