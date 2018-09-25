@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 ### Set up zsh (prezto)
 git clone --recursive https://github.com/rameshvs/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
@@ -30,4 +31,4 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 ### set up other stuff
-cp tmux.conf $HOME/.tmux.conf
+ln -s ${SCRIPT_DIR}/tmux.conf $HOME/.tmux.conf
